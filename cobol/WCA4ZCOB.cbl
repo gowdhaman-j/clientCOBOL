@@ -215,7 +215,8 @@
             ELSE
                MOVE IN-LOAN-DURATION        TO WS-LOAN-DURATION
             END-IF.
-
+            PERFORM A250-DIS-COBOL-PARA.
+       A250-DIS-COBOL-PARA.
             COMPUTE IN-LOAN-INT-PYMT =                                  E
                          ( IN-LOAN-AMOUNT * IN-LOAN-INT-RATE / 12 )     E
             DISPLAY 'INT PYMT ' IN-LOAN-INT-PYMT.
