@@ -103,7 +103,8 @@
        MAINLINE SECTION.
            DISPLAY 'MAINLINE'.
             PERFORM A200-LINE-JUST-COBOL-PARA.
-      *     PERFORM A300-DIS-COBOL-PARA.
+            PERFORM A250-DIS-COBOL-PARA.
+            PERFORM A300-DIS-COBOL-PARA.
             STOP RUN.
 
        A200-LINE-JUST-COBOL-PARA.
@@ -215,7 +216,7 @@
             ELSE
                MOVE IN-LOAN-DURATION        TO WS-LOAN-DURATION
             END-IF.
-            PERFORM A250-DIS-COBOL-PARA.
+      *     PERFORM A250-DIS-COBOL-PARA.
        A250-DIS-COBOL-PARA.
             COMPUTE IN-LOAN-INT-PYMT =                                  E
                          ( IN-LOAN-AMOUNT * IN-LOAN-INT-RATE / 12 )     E
@@ -247,7 +248,7 @@
             SUBTRACT  WS-BIRTH-YEAR  FROM WS-CURRENT-YEAR
                       GIVING WS-AGE.
             DISPLAY 'AGE....' WS-AGE.
-            PERFORM A300-DIS-COBOL-PARA.
+      *     PERFORM A300-DIS-COBOL-PARA.
        A300-DIS-COBOL-PARA.
 ******* LOAD PRODUCT TABLES
             MOVE  20                   TO WS-PROD-AGE(01).
