@@ -102,9 +102,10 @@
       *----------------------------------------------------------------*
        MAINLINE SECTION.
            DISPLAY 'MAINLINE'.
-            PERFORM A200-LINE-JUST-COBOL-PARA.
-            PERFORM A250-DIS-COBOL-PARA.
-            PERFORM A300-DIS-COBOL-PARA.
+           PERFORM A200-LINE-JUST-COBOL-PARA THRU A300-DIS-COBOL-PARA.
+      *      PERFORM A200-LINE-JUST-COBOL-PARA.
+      *      PERFORM A250-DIS-COBOL-PARA.
+      *      PERFORM A300-DIS-COBOL-PARA.
             STOP RUN.
 
        A200-LINE-JUST-COBOL-PARA.
