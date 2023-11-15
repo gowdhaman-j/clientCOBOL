@@ -102,10 +102,13 @@
       *----------------------------------------------------------------*
        MAINLINE SECTION.
            DISPLAY 'MAINLINE'.
-           PERFORM A200-LINE-JUST-COBOL-PARA THRU A300-DIS-COBOL-PARA.
+            PERFORM A200-LINE-JUST-COBOL-PARA THRU 
+                    A200-LINE-JUST-COBOL-PARA-EXIT .
       *      PERFORM A200-LINE-JUST-COBOL-PARA.
-      *      PERFORM A250-DIS-COBOL-PARA.
-      *      PERFORM A300-DIS-COBOL-PARA.
+            PERFORM A250-DIS-COBOL-PARA THRU 
+                    A250-DIS-COBOL-PARA-EXIT .
+            PERFORM A300-DIS-COBOL-PARA THRU 
+                    A300-DIS-COBOL-PARA-EXIT .
             STOP RUN.
 
        A200-LINE-JUST-COBOL-PARA.
@@ -218,6 +221,8 @@
                MOVE IN-LOAN-DURATION        TO WS-LOAN-DURATION
             END-IF.
       *     PERFORM A250-DIS-COBOL-PARA.
+       A200-LINE-JUST-COBOL-PARA-EXIT.
+           EXIT.
        A250-DIS-COBOL-PARA.
             COMPUTE IN-LOAN-INT-PYMT =                                  E
                          ( IN-LOAN-AMOUNT * IN-LOAN-INT-RATE / 12 )     E
@@ -250,6 +255,8 @@
                       GIVING WS-AGE.
             DISPLAY 'AGE....' WS-AGE.
       *     PERFORM A300-DIS-COBOL-PARA.
+       A250-DIS-COBOL-PARA-EXIT.
+           EXIT.
        A300-DIS-COBOL-PARA.
 ******* LOAD PRODUCT TABLES
             MOVE  20                   TO WS-PROD-AGE(01).
@@ -345,4 +352,5 @@
             MOVE '*********** HEADER 10 **********'
                                        TO WS-HEADER-10.
             DISPLAY                       WS-HEADER-10.
+       A300-DIS-COBOL-PARA-EXIT.     
            EXIT.
