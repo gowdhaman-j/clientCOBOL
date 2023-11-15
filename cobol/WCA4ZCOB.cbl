@@ -100,7 +100,7 @@
       ******************************************************************
        PROCEDURE DIVISION.
       *----------------------------------------------------------------*
-       MAINLINE SECTION.
+       A100-LINE-JUST-COBOL.
            DISPLAY 'MAINLINE'.
             PERFORM A200-LINE-JUST-COBOL-PARA THRU 
                     A200-LINE-JUST-COBOL-PARA-EXIT .
