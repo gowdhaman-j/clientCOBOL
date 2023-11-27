@@ -54,6 +54,7 @@
            DISPLAY "CUSTOMER NUMBER IS " IN-CUST-NUMBER
            MOVE IN-CUST-NUMBER TO WS-CUSTOMER-NUMBER
            .
+      *  ASHISH      
       ******************************************************************
       * PROGRAM NAME : Program:COBOL:GETAAVG
       * PROGRAM PATH : .../Cobol Programs/GETAAVG.cbl
