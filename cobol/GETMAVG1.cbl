@@ -28,7 +28,7 @@
            05 IN-CUST-NUMBER      PIC 9(10).
            05 IN-OVERPAID-FLAG    PIC X(01).
       ******************************************************************
-        COPY SQLCA.
+      * COPY SQLCA.
       * PATH : .../Copybooks/SQLCA.cpy
       * THE FOLLOWING VARIABLES ARE USED FROM THE COPYBOOK :
       * 01 SQLCA.
@@ -110,7 +110,7 @@
               DISPLAY 'INVALID CUSTOMER!!!'
               PERFORM 9000-END-PARA
            END-IF
-
+           MOVE '0AVMOT' TO IN-REQUEST-ID .
            PERFORM 4000-CHECK-IF-OVERPAID
       * TODO : CHECK THE FOLLOWING <CONTINUE/NEXT SENTENCE/GO TO/GO
       * BACK/RETURN/STOP RUN/EXIT/EXIT PROGRAM> STATEMENT
