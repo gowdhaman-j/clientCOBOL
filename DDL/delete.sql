@@ -1,1 +1,0 @@
-delete from ezsch.version where VERSIONNAME='8.7.123.0'
