@@ -1,0 +1,60 @@
+      ******************************************************************
+      * DCLGEN TABLE(I918482.CUSTOMER)                                 *
+      *        LIBRARY(I918482.WCA4Z.DCLGEN(CUSTOMER))                 *
+      *        ACTION(REPLACE)                                         *
+      *        LANGUAGE(COBOL)                                         *
+      *        STRUCTURE(CUSTOMER)                                     *
+      *        APOST                                                   *
+      *        LABEL(YES)                                              *
+      *        DBCSDELIM(NO)                                           *
+      *        COLSUFFIX(YES)                                          *
+      *        INDVAR(YES)                                             *
+      * ... IS THE DCLGEN COMMAND THAT MADE THE FOLLOWING STATEMENTS   *
+      ******************************************************************
+           EXEC SQL DECLARE I918482.CUSTOMER TABLE
+           ( CUST_ID                        INTEGER NOT NULL,
+             CUST_LN                        VARCHAR(30) NOT NULL,
+             CUST_FN                        VARCHAR(30) NOT NULL,
+             CUST_ADDR                      VARCHAR(50) NOT NULL,
+             CUST_CITY                      VARCHAR(30) NOT NULL,
+             CUST_ST                        VARCHAR(5) NOT NULL,
+             CUST_CTRY                      VARCHAR(30) NOT NULL
+           ) END-EXEC.
+      ******************************************************************
+      * COBOL DECLARATION FOR TABLE I918482.CUSTOMER                   *
+      ******************************************************************
+       01  CUSTOMER.
+      *    *************************************************************
+           10 CUST-ID              PIC S9(9) USAGE COMP-5.
+      *    *************************************************************
+           10 CUST-LN.
+              49 CUST-LN-LEN       PIC S9(4) USAGE COMP-5.
+              49 CUST-LN-TEXT      PIC X(30).
+      *    *************************************************************
+           10 CUST-FN.
+              49 CUST-FN-LEN       PIC S9(4) USAGE COMP-5.
+              49 CUST-FN-TEXT      PIC X(30).
+      *    *************************************************************
+           10 CUST-ADDR.
+              49 CUST-ADDR-LEN     PIC S9(4) USAGE COMP-5.
+              49 CUST-ADDR-TEXT    PIC X(50).
+      *    *************************************************************
+           10 CUST-CITY.
+              49 CUST-CITY-LEN     PIC S9(4) USAGE COMP-5.
+              49 CUST-CITY-TEXT    PIC X(30).
+      *    *************************************************************
+           10 CUST-ST.
+              49 CUST-ST-LEN       PIC S9(4) USAGE COMP-5.
+              49 CUST-ST-TEXT      PIC X(5).
+      *    *************************************************************
+           10 CUST-CTRY.
+              49 CUST-CTRY-LEN     PIC S9(4) USAGE COMP-5.
+              49 CUST-CTRY-TEXT    PIC X(30).
+      ******************************************************************
+      * INDICATOR VARIABLE STRUCTURE                                   *
+      ******************************************************************
+       01  ICUSTOMER.
+           10 INDSTRUC         PIC S9(4) USAGE COMP-5 OCCURS 7 TIMES.
+      ******************************************************************
+      * THE NUMBER OF COLUMNS DESCRIBED BY THIS DECLARATION IS 7       *
+      ******************************************************************
