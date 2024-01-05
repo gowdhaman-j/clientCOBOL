@@ -307,6 +307,7 @@
                 WHEN WS-AGE >  80 AND <= 100
                      MOVE 'PROD<=40..' TO WS-PROD-NAME-SELECT
             END-EVALUATE.
+
             DISPLAY 'SELECTED PROD... '   WS-PROD-NAME-SELECT.
 
             MOVE FUNCTION LOWER-CASE(WS-FIRST-NAME)
@@ -395,22 +396,22 @@
            MOVE ' INSERT CUSTOMER' TO EM-SQLREQ
       *================================================================*
 
-      *     MOVE FUNCTION CURRENT-DATE
-      *                             TO WS-CURRENT-DATE-DATA.
-      *    MOVE  WS-CURRENT-DATE-DATA
-      *                            TO CUSTOMERNUMBER.
+           MOVE  WS-FIRST-NAME     TO CA-FIRST-NAME.
+           MOVE  WS-LAST-NAME      TO CA-LAST-NAME.
+           MOVE  WS-DOB            TO CA-DOB.
+           MOVE  WS-HOUSE-NAME     TO CA-HOUSE-NAME.
+           MOVE  WS-HOUSE-NUM      TO CA-HOUSE-NUM.
+           MOVE  WS-POSTCODE       TO CA-POSTCODE.
+           MOVE  WS-PHONE-MOBILE   TO CA-PHONE-MOBILE.
+           MOVE  WS-PHONE-MOBILE   TO CA-PHONE-HOME.
+           MOVE  WS-EMAIL-ADDRESS  TO CA-EMAIL-ADDRESS.
 
-           MOVE  IN-FIRST-NAME     TO CA-FIRST-NAME.
-           MOVE  IN-LAST-NAME      TO CA-LAST-NAME.
-           MOVE  IN-DOB            TO CA-DOB.
-           MOVE  IN-HOUSE-NAME     TO CA-HOUSE-NAME.
-           MOVE  IN-HOUSE-NUM      TO CA-HOUSE-NUM.
-           MOVE  IN-POSTCODE       TO CA-POSTCODE.
-           MOVE  IN-PHONE-MOBILE   TO CA-PHONE-MOBILE.
-           MOVE  IN-PHONE-HOME     TO CA-PHONE-HOME.
-           MOVE  IN-EMAIL-ADDRESS  TO CA-EMAIL-ADDRESS.
-   *****   MOVE  IN-NUM-POLICIES   TO CA-NUM-POLICIES.
-   *****   MOVE  IN-SALARY         TO IN-SALARY.
+           MOVE  WS-LAST-NAME      TO CUST-LN.
+           MOVE  WS-FIRST-NAME     TO CUST-FN.
+           MOVE  'SAMPLE ADDRESS'  TO CUST-ADDR.
+           MOVE  WS-POSTCODE       TO CUST-CITY.
+           MOVE  'SAMPLE STREET'   TO CUST-ST.
+           MOVE  'USA'             TO CUST-CTRY.
 
            EXEC SQL
              INSERT INTO CUSTOMER
@@ -428,7 +429,7 @@
                          :CUST-CITY,
                          :CUST-ST,
                          :CUST-CTRY )
-           END-EXEC
+           END-EXEC.
 
            IF SQLCODE NOT EQUAL 0
              PERFORM WRITE-ERROR-MESSAGE
