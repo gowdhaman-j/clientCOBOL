@@ -156,7 +156,7 @@
        01 WS-UNSTR-TITLE               PIC X(9)  VALUE ' '.
        01 WS-TITLE-VALID               PIC X     VALUE ' '.
 
-       COPY DFHBMSCA.
+ ********      COPY DFHBMSCA.
 
        01 WS-U-TIME                      PIC S9(15) COMP-3.
        01 WS-ORIG-DATE                   PIC X(10).

@@ -221,7 +221,7 @@
 
        01 WS-SQLCODE1                   PIC 9(15).
 
-       EXEC SQL INCLUDE SQLDA END-EXEC.
+ *******      EXEC SQL INCLUDE SQLDA END-EXEC.
 
        01 STMTBUF.
           49 STMTLEN                    PIC S9(4) COMP
