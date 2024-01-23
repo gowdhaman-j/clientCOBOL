@@ -1,0 +1,8 @@
+RelationShipId,ForeignKeyTable,ForeignKeyField,PrimaryKeyTable,PrimaryKeyField
+1,customer_secure,customerNumber,customer,customerNumber
+2,policy,customerNumber,customer,customerNumber
+3,endowment,policyNumber,policy,policyNumber
+4,house,policyNumber,policy,policyNumber
+5,motor,policyNumber,policy,policyNumber
+6,Commercial,policyNumber,policy,policyNumber
+7,Claim,PolicyNumber,Policy,PolicyNumber

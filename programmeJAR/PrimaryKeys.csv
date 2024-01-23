@@ -1,0 +1,9 @@
+PrimaryTable,PrimaryKeyField
+customer,customerNumber
+customer_secure,customerNumber
+policy,policyNumber
+endowment,policyNumber
+house,policyNumber
+motor,policyNumber
+Commercial,policyNumber
+Claim,ClaimNumber
