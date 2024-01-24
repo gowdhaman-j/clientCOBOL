@@ -57,7 +57,7 @@
       *****************************************************************
       * Declaration for the table that contains employee information  *
       *****************************************************************
-           EXEC SQL DECLARE WSYGUCH.EMPLOYE TABLE
+           EXEC SQL DECLARE EMPLOYE TABLE
                (EMPNO   CHAR(6) NOT NULL,
                 NAME    VARCHAR(32),
                 ADDRESS VARCHAR(36) ,
@@ -93,7 +93,7 @@
                 SELECT EMPNO, NAME, ADDRESS, CITY, EMPLOC,
                        SSNO, BORN, SEX, HIRED, DEPTNO, JOBCODE,
                        SRATE, EDUC, SAL, VALCHK
-                FROM   wsyguch.employe
+                FROM   employe
                 WHERE EMPNO = :TEMP-EMPNO
            END-EXEC.
        PROCEDURE DIVISION.
@@ -194,7 +194,7 @@
            MOVE 'NEW CITY, CA 99999' TO H-CITY-DA.
            MOVE 'SQY2'               TO H-EMPLOC.
            EXEC SQL
-              UPDATE wsyguch.employe
+              UPDATE employe
               SET ADRESS = :H-ADDRESS,
                   CITY   = :H-CITY,
                   EMPLOC = :H-EMPLOC
@@ -208,7 +208,7 @@
            MOVE 'INSERT EMPLOYEE     ' TO STNAME
            WRITE PRT-TC-RESULTS FROM STNAME
            EXEC SQL
-              INSERT INTO wsyguch.employe VALUES
+              INSERT INTO employe VALUES
               (:H-EMPNO,
                :H-NAME,
                :H-ADDRESS,
